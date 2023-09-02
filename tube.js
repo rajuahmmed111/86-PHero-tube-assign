@@ -32,6 +32,7 @@ const handleCategoryThumbnail = async () => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/1000`);
     const data = await res.json();
     const tubes = data.data;
+    // console.log(date);
     old_tubes = tubes;
     // console.log(old_tubes);
     displayTube(tubes);
@@ -46,20 +47,20 @@ const changeCat = (catId) => {
         displayTube(old_tubes);
         return;
     }
-    
+
     if (old_tubes.filter(e => e.category_id == catId).length > 0) {
         old_tubes.forEach(tube => {
             if (tube.category_id == catId) {
                 const tubeCard = document.createElement('div');
-            tubeCard.classList = `card p-4 bg-gray-100 shadow-xl`;
-            tubeCard.innerHTML = `
+                tubeCard.classList = `card p-4 bg-gray-100 shadow-xl`;
+                tubeCard.innerHTML = `
             <figure><img src="${tube.thumbnail}" alt="Shoes" /></figure>
             <div class="card-body">
                 <h2 class="card-title"></h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
             </div>
             `;
-            tubeContainer.appendChild(tubeCard);
+                tubeContainer.appendChild(tubeCard);
             }
         })
     } else {
@@ -193,19 +194,27 @@ const changeCat = (catId) => {
 
         `;
     }
-    
+
 }
 
 const displayTube = (tubes) => {
     // console.log(tubes);
 
     const tubeContainer = document.getElementById('tube-container');
+
     tubes.forEach(tube => {
-        console.log(tube);
+        const date = tube.others.posted_date;
+        const mins = date / 60;
+        const hours = mins / 60;
+        console.log(hours);
+
         const tubeCard = document.createElement('div');
         tubeCard.classList = `card p-4 bg-gray-100 shadow-xl`;
         tubeCard.innerHTML = `
         <figure><img src="${tube.thumbnail}" alt="Shoes" /></figure>
+        <div>
+        <p>${tube.others.posted_date}</p>
+        </div>
 
         <div class="flex gap-4 mt-5">
             <figure><img class="w-12 rounded-full" src="${tube.authors[0]?.profile_picture}" alt="Shoes" /></figure>
@@ -223,6 +232,6 @@ const displayTube = (tubes) => {
     })
 }
 
-    
+
 handleCategoryButton();
 handleCategoryThumbnail();
