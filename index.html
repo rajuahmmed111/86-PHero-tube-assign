@@ -1,13 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 86 PHero Tube</title>
+
+    <!-- daisy UI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-    <h1>86 PHero</h1>
+    <header class="mx-5 my-4">
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <div class="flex gap-2">
+                    <svg width="32" height="38" viewBox="0 0 32 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16 38C24.8366 38 32 29.6426 32 19.3333C32 9.02401 24.8366 0.666656 16 0.666656C7.16344 0.666656 0 9.02401 0 19.3333C0 29.6426 7.16344 38 16 38Z"
+                            fill="#FF6B6B" />
+                        <path d="M32 19.3333H0C0 29.6426 7.16344 38 16 38C24.8366 38 32 29.6426 32 19.3333Z"
+                            fill="#FF1F3D" />
+                        <path
+                            d="M11.6249 29.9062C11.4791 29.9062 11.3329 29.8666 11.1982 29.7863C10.8847 29.5993 10.6875 29.2232 10.6875 28.8125V9.85415C10.6875 9.44341 10.8848 9.06731 11.1982 8.88035C11.5116 8.69339 11.8884 8.72701 12.1739 8.96749L23.4239 18.4467C23.6679 18.6523 23.8125 18.9822 23.8125 19.3333C23.8125 19.6845 23.6679 20.0144 23.4239 20.22L12.1739 29.6992C12.0111 29.8364 11.8185 29.9062 11.6249 29.9062Z"
+                            fill="#F9F9F9" />
+                        <path
+                            d="M10.6875 19.3333V28.8125C10.6875 29.2232 10.8848 29.5993 11.1982 29.7863C11.3328 29.8666 11.4791 29.9062 11.6249 29.9062C11.8184 29.9062 12.0111 29.8364 12.1739 29.6991L23.4239 20.22C23.6679 20.0144 23.8125 19.6845 23.8125 19.3333H10.6875Z"
+                            fill="#E2DFF4" />
+                    </svg>
+                    <h2 class="text-4xl font-semibold"><span class="text-[#FF1F3D]">PH</span> Tube</h2>
+                </div>
+            </div>
+            <div class="navbar-center">
+                <button id="btn-blog" class="btn txte-xl font-semibold">Sort by view</button>
+            </div>
+            <a class="navbar-end" href="./blog.html">
+                    <button class="btn btn-error txte-xl text-white font-semibold">Blog</button>
+            </a>
+        </div>
+    </header>
+    <hr>
+
+    <main class="mt-8">
+        <!-- button section -->
+        <section>
+            <div id="button-container" class="flex justify-center gap-6">
+            </div>
+        </section>
+
+        <!-- image section -->
+        <section class="mt-6">
+            <div id="tube-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
 
     <script src="tube.js"></script>
 </body>
+
 </html>
