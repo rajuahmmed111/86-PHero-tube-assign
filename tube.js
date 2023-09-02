@@ -191,7 +191,6 @@ const changeCat = (catId) => {
 </clipPath>
 </defs>
 </svg>
-
         `;
     }
 
@@ -212,8 +211,9 @@ const displayTube = (tubes) => {
         tubeCard.classList = `card p-4 bg-gray-100 shadow-xl`;
         tubeCard.innerHTML = `
         <figure><img src="${tube.thumbnail}" alt="Shoes" /></figure>
-        <div>
-        <p>${tube.others.posted_date}</p>
+
+        <div class="bg-black text-white">
+        <p>${hours}</p>
         </div>
 
         <div class="flex gap-4 mt-5">
